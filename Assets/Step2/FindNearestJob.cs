@@ -22,10 +22,7 @@ namespace Step2
             float3 destPos = Vector3.positiveInfinity;
             foreach (var targetPos in TargetsPos)
             {
-                var delta = pos - targetPos;
-                var sqrMagnitude = Mathf.Pow(delta.x, 2) 
-                                   + Mathf.Pow(delta.y, 2) 
-                                   + Mathf.Pow(delta.z, 2);
+                var sqrMagnitude = math.distancesq(pos, targetPos);
                 if (!(sqrMagnitude < minSqrMagnitude)) continue;
                 
                 minSqrMagnitude = sqrMagnitude;
