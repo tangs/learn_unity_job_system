@@ -48,7 +48,8 @@ namespace Step2
                 TargetsPos = _targetsPos
             };
             var handle = myJob.Schedule(seekersTransforms.Length, scheduleJobDependency);
-            // var handle = myJob.ScheduleParallel(seekersTransforms.Length, 64, scheduleJobDependency);
+            // var handle = myJob.ScheduleParallel(seekersTransforms.Length,
+            //     128, scheduleJobDependency);
             handle.Complete();
             
             for (var i = 0; i < seekersTransforms.Length; ++i)
